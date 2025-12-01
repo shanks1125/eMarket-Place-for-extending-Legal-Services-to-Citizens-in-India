@@ -1,0 +1,129 @@
+{
+  "name": "Provider",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to User entity"
+    },
+    "provider_type": {
+      "type": "string",
+      "enum": [
+        "advocate",
+        "broker",
+        "paralegal"
+      ],
+      "description": "Type of legal service provider"
+    },
+    "business_name": {
+      "type": "string",
+      "description": "Name of law firm or professional name"
+    },
+    "license_number": {
+      "type": "string",
+      "description": "Bar council or other official registration number"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Professional biography"
+    },
+    "profile_photo": {
+      "type": "string",
+      "description": "URL to profile photo"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "whatsapp_number": {
+      "type": "string"
+    },
+    "office_address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "experience_years": {
+      "type": "number"
+    },
+    "qualifications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Educational qualifications and certifications"
+    },
+    "specializations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Areas of legal expertise"
+    },
+    "services_offered": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "service_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "price_range": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "verification_documents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs to verification documents"
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "verified",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "verification_reason": {
+      "type": "string",
+      "description": "Reason for rejection, if applicable"
+    },
+    "rating": {
+      "type": "number",
+      "default": 0
+    },
+    "total_reviews": {
+      "type": "number",
+      "default": 0
+    },
+    "total_cases": {
+      "type": "number",
+      "default": 0
+    },
+    "total_incentives": {
+      "type": "number",
+      "default": 0
+    },
+    "is_available": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "user_id",
+    "provider_type",
+    "business_name"
+  ]
+}
